@@ -214,3 +214,16 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#############
+## ADA
+#############
+*.o
+*.ali
+*.lst
+
+
+#############
+## ADA projects
+#############
+lab*.exe
