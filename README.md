@@ -6,4 +6,4 @@
 
 <b>Useful commands: </b>
 - "gnatmake filename.adb" - compile project
-- "gcc -c filename.adb -gnatl=filename.lst"
+- "gcc -c filename.adb -gnatl=filename.lst" - create .lst file
