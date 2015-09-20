@@ -65,10 +65,10 @@ package body Data is
         Result : Matrix;
     begin
         for i in Index loop
-            for J in Index loop
-                Result(I)(J) := 0;
+            for j in Index loop
+                Result(i)(j) := 0;
                     for K in Index loop
-                        Result(I)(J) := Result(I)(J) + Left(I)(K) * Right(K)(J);
+                        Result(i)(j) := Result(i)(j) + Left(i)(k) * Right(k)(j);
                     end loop;
                 end loop;
         end loop;
@@ -79,11 +79,11 @@ package body Data is
     function "*" (Left : Vector; Right : Matrix) return Vector is
         R : Vector;
     begin
-        for J in Index loop
+        for j in Index loop
             R(j) := 0;
             begin
                 for K in Index loop
-                    R(J) := R(J) + Left(K) * Right(K)(J);
+                    R(j) := R(j) + Left(k) * Right(k)(j);
                 end loop;
             end;
         end loop;
@@ -94,8 +94,8 @@ package body Data is
     function "*" (Left : Integer; Right : Matrix) return Matrix is
         Result : Matrix;
     begin
-        for i in 1..N loop
-            for j in 1..N loop
+        for i in Index loop
+            for j in Index loop
                 Result(i)(j) := Left * Right(i)(j);
             end loop;
         end loop;
@@ -106,8 +106,8 @@ package body Data is
     function Max(A : Matrix) return Integer is
         Var : Integer := A(1)(1);
     begin
-        for i in 1..N loop
-            for j in 1..N loop
+        for i in Index loop
+            for j in Index loop
                 if A(i)(j) > Var then
                     Var := A(i)(j);
                 end if;
@@ -120,7 +120,7 @@ package body Data is
     function Min(A : Vector) return Integer is
         Var : Integer := A(1);
     begin
-        for i in 1..N loop          
+        for i in Index loop          
             if A(i) < Var then
                 Var := A(i);
             end if;
@@ -138,7 +138,7 @@ package body Data is
             K := i;
             for j in (i + 1)..n loop
                 if M(k) > M(j) then
-                    K:=j;
+                    K := j;
                 end if;
             end loop;
             Buf := M(k);
@@ -164,17 +164,17 @@ package body Data is
     -- input values for vectors
     procedure Input_Vector (V : out Vector) is
     begin
-        for I in Index loop
-            Get(V(I));
+        for i in Index loop
+            Get(V(i));
         end loop;
     end Input_Vector;
 
     -- input values for matrices
     procedure Input_Matrix (MA : out Matrix) is
     begin
-        for I in Index loop
-            for J in Index loop
-                Get(MA(I)(J));
+        for i in Index loop
+            for j in Index loop
+                Get(MA(i)(j));
             end loop;
         end loop;
     end Input_Matrix;
@@ -183,8 +183,8 @@ package body Data is
     procedure Output_Vector (V : in Vector) is
     begin
         New_Line;
-        for I in Index loop
-            Put(Item => V(I), Width => 5);
+        for i in Index loop
+            Put(Item => V(i), Width => 5);
         end loop;
         New_Line;
     end Output_Vector;
@@ -193,8 +193,8 @@ package body Data is
     procedure Output_Matrix (MA : in Matrix) is
     begin
         New_Line;
-        for I in Index loop
-            for J in Index loop
+        for i in Index loop
+            for j in Index loop
                 Put(Item => MA(i)(j), Width => 5);
             end loop;
             New_line;

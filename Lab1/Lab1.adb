@@ -28,7 +28,7 @@ begin
     --        Input data        --
     ------------------------------
     Put("All vectors had ");
-    Put(N);
+    Put(n);
     Put(" items");
     New_Line;
 
