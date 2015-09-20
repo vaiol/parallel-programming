@@ -18,7 +18,7 @@ use Ada.Text_IO, Ada.Integer_Text_IO;
   
 procedure Lab1 is 
     N : Integer := 3; 
-    package mainData is new Data(3);
+    package mainData is new Data(n);
    	use mainData;     
 	A, R, Z : Vector;
    	MB, MC, MD, MK, ML, MN, MO, MV, MW : Matrix;       
