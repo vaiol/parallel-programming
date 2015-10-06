@@ -227,3 +227,7 @@ pip-log.txt
 ## ADA projects
 #############
 lab*.exe
+
+*.iml
+target/
+.idea/
