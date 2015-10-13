@@ -30,10 +30,13 @@ public class Main {
 		System.out.println();
 		System.out.println("all is good");
 		Thread t1 = new Thread(new T1(n, value));
+		t1.setName("T1");
 		t1.setPriority(Thread.NORM_PRIORITY);
 		Thread t2 = new Thread(new T2(n, value));
+		t2.setName("T2");
 		t2.setPriority(Thread.NORM_PRIORITY);
 		Thread t3 = new Thread(new T3(n, value));
+		t3.setName("T3");
 		t3.setPriority(Thread.NORM_PRIORITY);
 		
 		t1.start();
