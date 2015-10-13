@@ -44,13 +44,30 @@ namespace pro_lab4
 
             Tasks tasks = new Tasks(n, value);
             
+            //creating additional threads
             Thread t1 = new Thread(tasks.F1);
             Thread t2 = new Thread(tasks.F2);
             Thread t3 = new Thread(tasks.F3);
 
+            //setting additional threads
+            t1.Name = "TF1";
+            t1.Priority = ThreadPriority.Highest;
+            t2.Name = "TF2";
+            t2.Priority = ThreadPriority.BelowNormal;
+            t3.Name = "TF3";
+            t3.Priority = ThreadPriority.Lowest;
+
+            //starting additional threads
             t1.Start();
             t2.Start();
             t3.Start();
+
+            //waiting additional threads
+            t1.Join();
+            t2.Join();
+            t3.Join();
+
+            Console.WriteLine("All threads are dead, exiting main thread");
 
             Console.Read();
         }
