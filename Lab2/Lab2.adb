@@ -31,10 +31,10 @@ begin
     declare
         package mainData is new Data(Size, Value);
         use mainData; 
-        --Processor numbers:
-        -- CPU_1 :  CPU_Range := 0;
-        -- CPU_2 :  CPU_Range := 1; 
-        -- CPU_3 :  CPU_Range := 2;   
+        Processor numbers:
+        CPU_1 :  CPU_Range := 0;
+        CPU_2 :  CPU_Range := 1; 
+        CPU_3 :  CPU_Range := 2;   
     begin
 
         declare
@@ -46,7 +46,7 @@ begin
                 pragma Priority(15);
                 pragma Task_Name ("T1");
                 pragma Storage_Size(100000000);
-                -- pragma CPU (CPU_3);
+                pragma CPU (CPU_3);
             end T1;
 
             task body T1 is
@@ -71,7 +71,7 @@ begin
                 pragma Priority(15);
                 pragma Task_Name ("T2");
                 pragma Storage_Size(100000000);
-                -- pragma CPU (CPU_1);
+                pragma CPU (CPU_1);
             end T2;
 
             task body T2 is
@@ -95,7 +95,7 @@ begin
                 pragma Priority(15);
                 pragma Task_Name ("T3");
                 pragma Storage_Size(100000000);
-                -- pragma CPU (CPU_1);
+                pragma CPU (CPU_1);
             end T3;
 
             task body T3 is
