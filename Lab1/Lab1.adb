@@ -32,7 +32,7 @@ begin
     Put(" items");
     New_Line;
 
-	----------- input F1 ----------
+	----------- inputin F1 ----------
     Put_Line(" -- Arguments for F1");
     
     Put("Enter vector A: ");
@@ -97,15 +97,15 @@ begin
     Put_Line(" -- Arguments for F3");
 
     New_Line;
-    Put("F1 = ");   	  
+    Put("F1: ");   	  
     Output_Matrix(MC);
 
     New_Line;
-    Put("F2 = ");       
+    Put("F2: ");       
     Output_Matrix(MN);
 
     New_Line;
-    Put("F3 = ");    
+    Put("F3: ");    
     Output_Vector(Z);
 
 end Lab1;
