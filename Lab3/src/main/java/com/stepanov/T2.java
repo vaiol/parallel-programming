@@ -16,43 +16,27 @@ package com.stepanov;
  *                                             *
  * * * * * * * * * * * * * * * * * * * * * * * *
  */
-public class T2 extends Thread {
+public class T2 extends Data implements Runnable {
 
-	private final int n;
-	private final int value;
-	private final int sleep;
-	private Data data;
-
-	public T2(int n, int value, int sleep) {
-		this.n = n ;
-		this.value = value;
-		this.sleep = sleep;
-		this.data = new Data(n, value);
+	public T2(int n, int value) {
+		super(n, value);
 	}
 
 	public void run() {
-		try {
-			Thread.sleep(sleep);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		System.out.println("Task F2 started");
 		Matrix ml, mk, mo, mn;
-		ml = data.inputMatrix();
-		mk = data.inputMatrix();
-		mo = data.inputMatrix();
+		ml = inputMatrix();
+		mk = inputMatrix();
+		mo = inputMatrix();
 		mn = f2(ml, mk, mo);
-		data.output(mn);
+		output(mn);
 		System.out.println("Task F2 finished");
 	}
-	
+
 	/**
 	 * F2: MN = MAX(ML) * (MK * MO)
 	 */
 	private Matrix f2(Matrix ml, Matrix mk, Matrix mo) {
-		return data.multiplication(data.max(ml), data.multiplication(mk, mo));
+		return multiplication(max(ml), multiplication(mk, mo));
 	}
-	
-
-
 }

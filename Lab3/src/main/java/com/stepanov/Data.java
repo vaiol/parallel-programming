@@ -14,7 +14,7 @@ import java.util.Arrays;
  * 											   *
  * @author Stepanov Alexander				   *
  * @group IP-31								   *
- * @date 06.10.15                              *
+ * @date 13.10.15                              *
  *                                             *
  * * * * * * * * * * * * * * * * * * * * * * * *
  */
@@ -61,7 +61,7 @@ public class Data {
 		}
 	}
 
-    protected static Matrix multiplication(int left, Matrix right) {
+    protected Matrix multiplication(int left, Matrix right) {
         Matrix result = new Matrix(right.size());
         for (int i = 0; i < right.size(); i++) {
             Vector vector = right.get(i);
@@ -72,7 +72,7 @@ public class Data {
         return result;
     }
 	
-	protected static Vector multiplication(Vector left, Matrix right) {
+	protected Vector multiplication(Vector left, Matrix right) {
 		Vector result = new Vector(left.size());
 		for (int i = 0; i < left.size(); i++) {
 			result.set(i, 0);
@@ -83,7 +83,7 @@ public class Data {
 		return result;
 	}
 	
-	protected static Matrix multiplication(Matrix left, Matrix right) {
+	protected Matrix multiplication(Matrix left, Matrix right) {
 		Matrix result = new Matrix(left.size());
 		for (int i = 0; i < left.size(); i++) {
 			for (int j = 0; j < left.size(); j++) {
